@@ -84,4 +84,75 @@ return `Hi ${name}, you are ${age} years old!` // concatenation
 }
 console.log(getGreeting("naru", 25))
 
+// Functions + Logic Challenges
 
+// 01. canVote(age)
+// Write a function that returns true if the age is 18 or more, otherwise false.
+
+function canVote(age) {
+    return age > 17
+}
+console.log(canVote(18))
+
+
+// 02. isPasswordStrong(password)
+// A password is strong if it's 8+ characters and contains at least one number.
+// Return true if it's strong, false otherwise.
+
+function isPasswordStrong(password) {
+    return password.length >= 8 && /\d/.test(password) // regular expression (RegEx) to check if it contains digits -> Does this string contain at least one digit?
+}
+console.log(isPasswordStrong("abcd1234"))
+
+// 03. checkGrade(score)
+// Write a function that returns:
+// "A" if score >= 90
+// "B" if score >= 80
+// "C" if score >= 70
+// "D" if score >= 60
+// "F" if below 60
+
+function checkGrade(score) {
+    if (score >= 90) {
+        return "A"
+    } else if (score >= 80) {
+        return "B"
+    } else if (score >= 70) {
+        return "C"
+    } else if (score >= 60) {
+        return "D"
+    } else {
+        return "F"
+    }
+}
+console.log(checkGrade(44))
+
+// 04. canRide(height, hasAdult)
+// A person can ride if their height is 120cm or more, OR if they are with an adult.
+// Return true if they can ride, false otherwise.
+
+function canRide(height, hasAdult) {
+    return height > 119 || hasAdult // We can simplify hasAdult === true to just hasAdult!
+}
+console.log(canRide(110, false))
+
+// 05. loginStatus(isLoggedIn, isAdmin)
+// Return:
+// "Welcome back!" if isLoggedIn is true
+// "Welcome, Admin!" if both isLoggedIn and isAdmin are true
+// "Access Denied." if isLoggedIn is false
+
+function loginStatus(isLoggedIn, isAdmin) {
+   // if (isLoggedIn === true && isAdmin === false) {
+   //     return "Welcome back!"
+  //  } else if (isLoggedIn === true && isAdmin === true) {
+  //      return "Welcome, Admin!"
+  //  } else {
+   //     return "Access Denied."
+  //  } 
+    if (isLoggedIn && isAdmin) return "Welcome, Admin!";
+    if (isLoggedIn) return "Welcome back!";
+    return "Access Denied.";
+
+}
+console.log(loginStatus(false, false))
